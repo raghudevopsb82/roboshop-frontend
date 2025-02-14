@@ -1,0 +1,19 @@
+name: Frontend CICD
+run-name: Frontend CICD
+on: [push]
+jobs:
+  ci:
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci.yml@main
+    with:
+      component: frontend
+
+  deploy:
+    needs: ci
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/deploy.yml@main
+    with:
+      component: frontend
+
+
+
+
+
