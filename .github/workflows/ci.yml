@@ -7,6 +7,9 @@ jobs:
     with:
       component: frontend
       appType: none
+    secrets:
+      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+
 
   deploy:
     needs: ci
